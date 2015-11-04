@@ -1,0 +1,9 @@
+*.pyc
+*.egg-info
+dist
+cover
+.coverage
+docs/_*
+build
+playground.py
+__*

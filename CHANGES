@@ -1,0 +1,146 @@
+Changelog
+=========
+
+Version 0.3.1
+-------------
+
+- Feature: Actions (#128)
+
+Version 0.3.1
+-------------
+
+- Bugfix #122
+
+Version 0.3.0
+-------------
+
+- Feature: Added button Validate (#115)
+- Enhancement: Added the ability to customise the port
+    at which QML distributes ports for connecting clients. (#114)
+- Enhancement: Added additional metadata to terminal
+
+Version 0.2.12
+--------------
+- Bugfix: GUI hangs on plug-ins subclassed from Plugin (#110)
+
+Version 0.2.11
+--------------
+
+- Added support for Pyblish RPC 0.1.1
+- PROBATION SUPPORT for pyblish_qml.settings
+- PROBATION SUPPORT for context.set_data("label")
+
+Version 0.2.10
+--------------
+
+- Feature: Talkback (see #95)
+- Feature: Shared instance (see #96)
+- Feature: Context visible in list of items
+- Enhancement: Now supports Pyblish 1.1
+- API: Added Pyblish.Graphs module
+- Known issue: Inactive plug-ins appear to process
+
+Version 0.2.9
+-------------
+
+- Feature: Perspective
+- Enhancement: Uniform sizes in Terminal
+- Bugfix: Support for filtering multiple logging levels in the Terminal
+- Bugfix: Repair now repairs broken context (see #73)
+- API: New model (see #81)
+- API: Added Pyblish.Scrollbar
+- API: Added Pyblish.Spacer
+
+Version 0.2.8
+-------------
+
+- Feature: Repair
+- Feature: Compatible plug-ins updates interactively as you toggle instances.
+- Bugfix: Failing Selectors won't prohibit Extraction.
+- Enhancement: You can't close while publishing.
+- Enhancement: You can't crash the GUI. I dare you.
+- API: Added util.register_vendor_libraries
+- API: Added util.deregister_vendor_libraries
+- API: Changed util.invoke -> util.async
+
+Version 0.2.7
+-------------
+
+- Feature: Terminal 2.0
+- Feature: Selectors are now part of the GUI
+- Feature: Plug-in documentation is now (brutally) parsed
+- Performance: GUI shows up before processing selectors.
+- Bugfix: Plug-ins now only processes the Context once
+- API: Added Pyblish.AwesomeIcon
+- API: Added util.invoke
+
+Version 0.2.6
+-------------
+
+- Process now properly dies when parent dies
+- Known issue from  0.2.5 resolved; showing an already shown GUI
+- State 1.0 (See #60)
+- Refactoring
+
+Version 0.2.5
+-------------
+
+- Preloading
+- Performance enhancement (deferred requests)
+
+Known issues:
+    1. Showing an already visible GUI will cause the GUI
+    to re-appear once closed.
+    2. GUI may not appear gracefully under Windows using Aero
+    or Windows 8, but may instead pop into place.
+
+Version 0.2.4
+-------------
+
+- Implementing basic Properties page
+- Implementing independent Endpoint server for testing
+- Added Pyblish.TextArea
+- Added Pyblish.ActionBar
+- Added Pyblish.Action
+- Added Pyblish.IconButton
+- Improved feedback when clicking
+- Improved feedback when hovering
+- Made package executable
+- Fixed issue 155
+- Fixed issue 156
+- Fixed issue 158
+- Refactoring
+
+Version 0.2.3
+-------------
+
+- Module consolidation (QML)
+
+Version 0.2.2
+-------------
+
+- Refactoring
+- Succeeded items now appear in green
+
+Version 0.2.1
+-------------
+
+- Publishing now stops upon failed validation
+- Errors are visualised
+- Added Stop button
+- Added Reset button
+
+Version 0.2.0
+-------------
+
+- Swapped controller from QML to Python
+- Performance enhancements; the GUI now rivals non-GUI modes.
+- Simplified terminal output; it now resembles non-GUI output
+- Simplified backend; no more thread-per-process
+- Temporarily switched to native OS window; this should help GUI appearing behind windows
+- Temporarily disabled pause/stop buttons; to stop, close the GUI.
+
+Version 0.1.2
+--------------
+
+- Fixes black-font text sometimes appearing in GUI (#18)
