@@ -133,8 +133,8 @@ class Application(QtWidgets.QApplication):
                                "Pyblish is running. "
                                "Click here for more information.")
 
-        # Temp
-        self._window.show()
+        if os.environ.get("DEBUG"):
+            self._window.show()
 
     def on_autohide_changed(self, auto_hide):
         """Respond to changes to auto-hide
@@ -272,6 +272,7 @@ def main(debug=False):
     app = Application(sys.argv)
 
     if debug:
+        os.environ["DEBUG"] = "1"
         __import__("_debug").bootstrap(app)
 
     app.start()
