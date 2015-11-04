@@ -2,7 +2,7 @@
 
 Pyblish accessible as a tray icon.
 
-![untitled](https://cloud.githubusercontent.com/assets/2152766/10944772/ab0064a0-8312-11e5-9d80-078e78a2f905.gif)
+![untitled](https://cloud.githubusercontent.com/assets/2152766/10945772/d8da3474-8316-11e5-8eb0-8eb09e2321c0.gif)
 
 <br>
 <br>
