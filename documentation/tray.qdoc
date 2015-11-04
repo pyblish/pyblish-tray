@@ -1,0 +1,5 @@
+/*!
+    \qmlmodule Library 0.1
+    \title Pyblish Tray Design UI components
+*/
+This implements QtQuick Components for Tray.

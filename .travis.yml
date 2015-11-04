@@ -1,0 +1,5 @@
+language: python
+python:
+- 2.7
+script:
+- git clone https://github.com/pyblish/pyblish-tray.git
