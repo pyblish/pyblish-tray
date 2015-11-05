@@ -6,4 +6,4 @@ cover
 docs/_*
 build
 playground.py
-__*
+___*
