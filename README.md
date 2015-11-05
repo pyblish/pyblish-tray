@@ -42,6 +42,7 @@ $ python -m pyblish_tray
 
 **Planned**
 
+- Timestamp for console output
 - Additional virtual host controls
  - Working directory
  - Environment
