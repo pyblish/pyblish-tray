@@ -25,6 +25,7 @@ class Application(QtWidgets.QApplication):
     THEMEPATH = os.path.join(ROOTPATH, "theme.json")
 
     is_broadcasting = QtCore.pyqtSignal(str)
+    listening = QtCore.pyqtSignal()
 
     def __init__(self, argv):
         super(Application, self).__init__(argv)
@@ -118,6 +119,7 @@ class Application(QtWidgets.QApplication):
         # Signals
         self._tray.activated.connect(self.on_tray_activated)
         self.aboutToQuit.connect(self.on_quit)
+        self.listening.connect(self.launch_virtual_host)
 
         menu = self.build_menu()
         self._tray.setContextMenu(menu)
@@ -127,7 +129,6 @@ class Application(QtWidgets.QApplication):
         self._window.setGeometry(geometry)
 
         self.launch()
-        self.launch_virtual_host()
 
         self._tray.showMessage("Status",
                                "Pyblish is running. "
@@ -177,7 +178,13 @@ class Application(QtWidgets.QApplication):
 
         def reader():
             for line in iter(popen.stdout.readline, b""):
-                self.broadcast(line.rstrip("\r\n"))
+                line = line.rstrip("\r\n")
+
+                # TODO(marcus): Make this more robust
+                if line.startswith("Listening on 127.0.0.1"):
+                    self.listening.emit()
+
+                self.broadcast(line)
 
         threading.Thread(target=reader).start()
         self.broadcast("Finished")
