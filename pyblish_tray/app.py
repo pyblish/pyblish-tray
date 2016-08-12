@@ -8,7 +8,7 @@ import threading
 import subprocess
 
 # Dependencies
-import pyblish_rpc.server
+import pyblish_qml.rpc.server
 import pyblish_qml.client
 from PyQt5 import QtCore, QtWidgets, QtGui, QtQml
 
@@ -198,8 +198,8 @@ class Application(QtWidgets.QApplication):
 
         proxy = pyblish_qml.client.proxy()
         port = proxy.find_available_port()
-        service = pyblish_rpc.service.RpcService()
-        server = pyblish_rpc.server._server(port, service)
+        service = pyblish_qml.rpc.service.RpcService()
+        server = pyblish_qml.rpc.server._server(port, service)
         os.environ["PYBLISH_CLIENT_PORT"] = str(port)
 
         thread = threading.Thread(target=server.serve_forever)
